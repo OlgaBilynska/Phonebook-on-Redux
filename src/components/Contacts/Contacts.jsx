@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Contact from './Contact/Contact';
 import { ContactList } from './Contacts.styled';
 
-const Contacts = ({ contactList, onDeleteContact }) => {
+const Contacts = () => {
   return (
     <div>
       <ContactList>
-        <Contact list={contactList} deleteContact={onDeleteContact} />
+        <Contact />
       </ContactList>
     </div>
   );

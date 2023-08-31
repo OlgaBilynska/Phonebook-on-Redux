@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ContactItem, ContactContainer } from './Contact.styled';
 import { Button } from 'components/Button/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getContacts } from 'redux/selectors';
+import { deleteContact } from 'redux/contactSlice';
 
-const Contact = ({ list, deleteContact }) => {
+const Contact = () => {
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
-  return list.map(({ id, name, number }) => (
+  return contacts.map(({ id, name, number }) => (
     <ContactContainer key={id}>
       <ContactItem>
         {name} : {number}
