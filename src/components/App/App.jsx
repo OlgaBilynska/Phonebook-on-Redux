@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Notiflix from 'notiflix';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { addContact } from 'redux/contactSlice';
+// import Notiflix from 'notiflix';
 import ContactForm from '../ContactForm/ContactForm';
 import Contacts from '../Contacts/Contacts';
 import Filter from '../Filter/Filter';
@@ -22,18 +24,6 @@ export function App() {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ]
   );
-
-  const formSubmitHandler = data => {
-    if (
-      contacts.find(
-        contact => contact.name.toLowerCase() === data.name.toLowerCase()
-      )
-    ) {
-      Notiflix.Notify.failure(`${data.name} is already in contacts.`);
-    } else {
-      setContacts(prevContacts => [data, ...prevContacts]);
-    }
-  };
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -60,7 +50,7 @@ export function App() {
   return (
     <Container>
       <PhonebookTitle>Phonebook</PhonebookTitle>
-      <ContactForm onSubmit={formSubmitHandler} />
+      <ContactForm />
       <ContactTitle>Contacts</ContactTitle>
       <Filter value={filter} onChange={changeFilter} />
 

@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 import {
   FormWrapper,
@@ -11,6 +12,7 @@ import {
   ErrorMessageForm,
   FieldForm,
 } from './ContactForm.styled';
+import { addContact } from 'redux/contactSlice';
 
 const initialValues = {
   name: '',
@@ -32,14 +34,14 @@ const schema = Yup.object({
     .required('Phone number is required'),
 });
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = () => {
   const inputNameId = nanoid();
   const inputNumberId = nanoid();
 
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
-    const idGen = nanoid();
-    const contact = { id: idGen, ...values };
-    onSubmit(contact);
+    dispatch(addContact(values));
     resetForm();
   };
 
