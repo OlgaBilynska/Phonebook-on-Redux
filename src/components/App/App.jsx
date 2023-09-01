@@ -20,7 +20,7 @@ import { getContacts } from 'redux/selectors';
 export function App() {
   const contacts = useSelector(getContacts);
   console.log('🚀 ~ file: App.jsx:22 ~ App ~ contacts:', contacts);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const [filter, setFilter] = useState('');
   // const [contacts, setContacts] = useState(
   //   JSON.parse(localStorage.getItem('contacts')) ?? [

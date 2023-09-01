@@ -2,7 +2,6 @@ import React from 'react';
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import {
@@ -80,10 +79,6 @@ const ContactForm = () => {
       </FormWrapper>
     </Formik>
   );
-};
-
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func,
 };
 
 export default ContactForm;
