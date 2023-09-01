@@ -6,7 +6,6 @@ import { getContacts, getFilter } from 'redux/selectors';
 import { deleteContact } from 'redux/contactSlice';
 
 const getVisibleContacts = (contacts, filter) => {
-  console.log('f', filter);
   if (filter) {
     const filterNorm = filter.toLowerCase();
     const filteredContacts = contacts.filter(contact =>
@@ -20,7 +19,6 @@ const getVisibleContacts = (contacts, filter) => {
 const Contact = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  console.log('filter', filter);
   const dispatch = useDispatch();
   const visibleContacts = getVisibleContacts(contacts, filter);
 

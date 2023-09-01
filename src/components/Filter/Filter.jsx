@@ -14,7 +14,6 @@ const Filter = () => {
   const handleChange = e => {
     const filteredValue = e.currentTarget.value;
     setFilter(filteredValue);
-    console.log('e', filteredValue);
     dispatch(setFilterValue(filteredValue));
   };
 
