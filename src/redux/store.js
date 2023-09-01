@@ -9,9 +9,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import { persistedContactReducer } from './contactSlice';
-// import { persistedFilterReducer } from './filterSlice';
-// import { PersistConfig } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { reducer } from './reducers';
 
